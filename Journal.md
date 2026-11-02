@@ -9,3 +9,7 @@ The StreamBuilder knows when to rebuild because it listens for new data from the
 # Phase 3
 
 When a button is pressed, its onPressed event sends a StockAction through the BLoC's input sink. The BLoC receives the action, calculates the price change, and uses copyWith to create a new Stock object. It then sends the updated object through the output stream. The StreamBuilder listens for this new data and rebuilds the widget automatically. The rebuild happens inside the StreamBuilder, not inside the button or BLoC.
+
+# Phase 4
+
+The BLoC pattern separates the business logic from the user interface. The StockBloc handles the stock prices, calculations, and stream updates, while StockPage displays the information and buttons. If I wanted to change the UI to look like a professional trading terminal, I would only need to change the UI code. The StockBloc could remain the same because its job is to manage the stock data, not how it looks. This makes the application easier to maintain and update.
