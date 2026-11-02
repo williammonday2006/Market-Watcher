@@ -73,6 +73,25 @@ class StockPage extends StatelessWidget {
                         color: priceColor,
                       ),
                     ),
+                    const SizedBox(height: 25),
+                    ElevatedButton(
+                      onPressed: () {
+                        stockBloc.actionSink.add(StockAction.Increase);
+                      },
+                      child: const Text('Bull Market'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        stockBloc.actionSink.add(StockAction.Decrease);
+                      },
+                      child: const Text('Bear Market'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        stockBloc.actionSink.add(StockAction.Reset);
+                      },
+                      child: const Text('Reset'),
+                    ),
                   ],
                 ),
               ),
